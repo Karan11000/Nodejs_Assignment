@@ -11,7 +11,7 @@ dotenv.config();
 
 
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect("mongodb+srv://karan:Karan1234@cluster0.8jj4i.mongodb.net/studentdata?retryWrites=true&w=majority")
 .then(()=>{
     console.log("succesfully connected");
 }).catch((err)=>{
@@ -26,10 +26,10 @@ app.get("/", async (req, res)=>{
     console.log(result);
     res.json({
         result, 
-        token : jwt.sign({id}, process.env.JWT_SECRET)
+        token : jwt.sign({id}, "karan")
     })
 })
-app.get('/api', protect,  async (req, res)=>{ 
+app.get('/api', protect,  async (req, res)=>{  
     const results = await student.find({});
     res.send(results);
 })
