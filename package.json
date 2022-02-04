@@ -1,0 +1,21 @@
+{
+  "name": "assignment",
+  "version": "1.0.0",
+  "description": "Creating server to add student record",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.0",
+    "validate-phone-number-node-js": "0.0.1"
+  }
+}
