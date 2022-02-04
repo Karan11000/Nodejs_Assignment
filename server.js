@@ -52,7 +52,7 @@ app.post('/api',protect,  async (req, res)=>{
         throw new Error("Enter a valid Phone Number");   
     }
       await student.create({name: name, email: email, mobile:mobile});
-      res.redirect('/');
+      res.redirect('/api');
 })
 
 app.put('/api', protect,  async (req, res)=>{
@@ -79,7 +79,7 @@ app.put('/api', protect,  async (req, res)=>{
         res.status(400);
         throw new Error("Unable to update the student record");
     }else{
-        res.redirect("/");
+        res.redirect("/api");
     }
 })
 
@@ -91,9 +91,7 @@ app.delete('/api',protect,  async (req, res)=>{
     }
     console.log(studentId)
     await student.findOneAndDelete({ _id : studentId})
-    console.log("hey")
-    res.redirect('/');
-    console.log("hey1") 
+    res.redirect('/api');
 })
 
 app.listen(5000);
